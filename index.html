@@ -1,29 +1,37 @@
+
+<!DOCTYPE html>
 <html>
   <head>
     <title>Workout Grind</title>
- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
   </head>
-  <body>
-    <div class="container mt-5">
-      <div class="row">
-        <h2>I am him</h2>
-        <p><i id="quote"></i></p>
+  <body class="flex flex-col items-center h-screen justify-center">
+    <div class="w-full max-w-lg px-4 py-2 mx-auto bg-white rounded shadow-md">
+      <div class="mb-4">
+        <h2 class="text-lg font-semibold text-gray-700">You are him</h2>
+        <p class="mt-1 text-sm text-gray-600"><i id="quote"></i></p>
       </div>
-      Cardio1: <input id="cardio1"></input>
-      <br>
-      Cardio2: <input id="cardio2"></input>
-      <br>
-      Pushups: <input id="pushups"></input>
-      <br>
-      Pullups: <input id="pullups"></input>
-      <br>
-      Jumping Frogs: <input id="frogs"</input>
-      <br>
-      Cold Plunge (secs): <input id="coldPlunge"</input>
-      <br>
-      <button class="btn btn-primary" id="submit">Generate</button>
-    </div>
+      
+      <label for="cardio1" class="block mt-2">Cardio1:</label>
+      <input id="cardio1" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-gray-200 border border-gray-300 rounded-md">
 
+      <label for="cardio2" class="block mt-2">Cardio2:</label>
+      <input id="cardio2" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-gray-200 border border-gray-300 rounded-md">
+
+      <label for="pushups" class="block mt-2">Pushups:</label>
+      <input id="pushups" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-gray-200 border border-gray-300 rounded-md">
+
+      <label for="pullups" class="block mt-2">Pullups:</label>
+      <input id="pullups" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-gray-200 border border-gray-300 rounded-md">
+
+      <label for="frogs" class="block mt-2">Jumping Frogs:</label>
+      <input id="frogs" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-gray-200 border border-gray-300 rounded-md">
+
+      <label for="coldPlunge" class="block mt-2">Cold Plunge (secs):</label>
+      <input id="coldPlunge" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-gray-200 border border-gray-300 rounded-md">
+
+      <button class="w-full px-4 py-2 mt-4 text-white bg-blue-500 border border-blue-700 rounded-md hover:bg-blue-700" id="submit">Generate</button>
+    </div>
     <script>
       const quotes = [
   "You are in danger of living a life so comfortable and soft that you will die without ever realizing your true potential.",
@@ -54,11 +62,14 @@
   "Be more than motivated, be more than driven, become literally obsessed to the point where people think you're fucking nuts.",
   "It takes great strength to be vulnerable enough to put your ass on the line, in public, and work toward a dream that feels like it's slipping away."
 ]
-      let quoteIndex = Math.floor(Math.random() * quotes.length)
-      let quote = quotes[quoteIndex]
-      document.getElementById("quote").innerHTML = quote + "- david goggins"
+      function regen() {
+        let quoteIndex = Math.floor(Math.random() * quotes.length)
+        let quote = quotes[quoteIndex]
+        document.getElementById("quote").innerHTML = quote + " - david goggins"
+      }
+      regen()
 
-      let cardios = ["1 mile run", "6 mins skipping", "3x1 minute medicine ball slams", "30 burpees"]
+      let cardios = ["1 mile run", "6 mins skipping", "3x1 minute medicine ball slams", "30 burpees", "5 mins assault bike"]
       let maxPushups = 50
       let maxPullups = 40
       let maxFrogs = 50
@@ -86,6 +97,8 @@
         pullups.value = pullupsIndex
         frogs.value = frogsIndex
         coldPlunge.value = plungeIndex
+
+        regen()
       })
     </script
   </body>
