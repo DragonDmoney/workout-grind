@@ -88,8 +88,8 @@
       let difficulty = document.getElementById("difficulty")
 
       submit.addEventListener("click", function() {
-        let cardio1Index = Math.floor(Math.random() * cardios.length * difficulty.value)
-        let cardio2Index = Math.floor(Math.random() * cardios.length * difficulty.value)
+        let cardio1Index = Math.floor(Math.random() * cardios.length)
+        let cardio2Index = Math.floor(Math.random() * cardios.length)
         let pushupsIndex = Math.floor(Math.random() * maxPushups * difficulty.value)
         let pullupsIndex = Math.floor(Math.random() * maxPullups * difficulty.value)
         let plungeIndex = Math.floor(Math.random() * maxColdPlunge * difficulty.value)
